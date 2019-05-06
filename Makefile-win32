@@ -1,0 +1,49 @@
+# Makefile-win32 for sdlzombies
+
+# by Philippe Brochard
+# hocwp@free.fr
+# http://hocwp.free.fr
+
+# Version 1.0.0
+
+# Thu May 31 20:14:31 CEST 2001
+
+VERSION=1.0.0
+
+CFLAGS=-Wall -O2 $(SDL_CFLAGS) -DDATA_PREFIX=\"data/\" \
+	-DWIN32 -DJOY_NO $(SDL_CFLAGS) $(XTRA_CFLAGS) -DVERSION=\"$(VERSION)\"
+
+
+# Other definitions:
+
+SDL_LIBS=-L/usr/local/cross-tools/i386-mingw32/lib -lmingw32 \
+	-lSDLmain -lSDL -lSDLmain -luser32 -lgdi32 -lwinmm -ldxguid \
+	-mwindows
+XTRA_LIBS=-L/usr/local/cross-tools/i386-mingw32/lib/ \
+	-lSDL_image -lpng -lz -lSDL_mixer
+SDL_CFLAGS=-I/usr/local/cross-tools/i386-mingw32/include \
+	-I/usr/local/cross-tools/i386-mingw32/include/SDL
+
+
+# Make commands:
+
+all:	sdlzombies.exe
+	cp /usr/local/cross-tools/i386-mingw32/lib/SDL*.dll .
+	chmod 644 SDL*.dll
+
+clean:
+	-rm sdlzombies.exe
+	-rm *.o
+	-rm SDL*.dll
+
+
+# Main executable:
+
+sdlzombies.exe:	sdlzombies.o
+	$(CC) $(CFLAGS) sdlzombies.o -o sdlzombies.exe \
+		$(XTRA_LIBS) $(SDL_LIBS)
+
+
+# Main object:
+
+sdlzombies.o:	sdlzombies.c

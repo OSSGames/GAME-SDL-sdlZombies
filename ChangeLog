@@ -1,0 +1,74 @@
+Version 1.0.0 :
+	Final version !
+
+Version 0.9.0 :
+	Main : Test All
+	Remove : all tty debug output.
+
+Version 0.2.1 :
+	Main Add : Sound volume.
+	Add : f key to swap fullscreen/window mode in RunLevel.
+	Add : p key : pause / unpause.
+	Change : organization of data/menu -> add data/menu_opt.
+	Change : better graphics for menus.
+
+Version 0.2.0 :
+	Main Add : Add sounds ...
+	Add : pause and sounds when penguin die.
+	Add : Options -w --window, -s --sound : force enabling window mode
+			and sounds.
+	Add : 3 types of map : hide, transparent, under, over.
+	Add : more backgrounds
+
+Version 0.1.5 :
+	Main Add : save/load ~/.sdlzombiesrc -> save/load options
+
+Version 0.1.4 :
+	Main Add : Menu Options.
+	Add : standardization of event loop : 
+				done = SDL_EVT_??? (NULL, EXIT,QUIT, VALID)
+
+Version 0.1.3 :
+	Main Add : Menu : play, options, quit.
+	Add : better choice of input : keyboard if push an arrow key
+				or mouse if mouse have moved. (k key works always).
+
+Version 0.1.2 :
+	Main Add : Level Info.
+	Add : draw_text in separate file (draw_text.c/h) + draw small font
+	Add : wait no event at start game
+	Define : global variables : use_map, use_keyboard (same as use_sound)
+	Solve Bug : hide/show mouse cursor.
+
+Version 0.1.1 :
+	Main Add : status bar.
+	Add : Map.
+	(I begin to write the ChangeLog file, so the changelog of 
+		some versions is not Ok).
+
+Version 0.1.0 :
+	Main game : end !!!
+	Add : Status bar, main menu and main game.
+
+Version 0.0.7 :
+	Save ?
+
+Version 0.0.6 :
+	Add : option.h
+			simple way to control all the main variables of the game (level, 
+				lives, size of the background ...)
+
+Version 0.0.5 :
+	Save ?
+
+Version 0.0.4 :
+	Save ?
+
+Version 0.0.3 :
+	Add : Holes
+
+Version 0.0.2 :
+	Add : Zombies (move ...)
+
+Version 0.0.1 :
+	Base of the game : penguin move on screen with scroll.
